@@ -18,25 +18,62 @@ import {
   mintOneToken,
   shortenAddress,
 } from "./candy-machine";
+import { MintProps } from "./Components/MintSection/MintSection";
 
-const ConnectButton = styled(WalletDialogButton)``;
+const ContainerMain = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ConnectButton = styled(WalletDialogButton)`
+  color: #D13030;
+  font-family: 'BitBap';
+  background: #0B0B1B;
+  :hover {
+    background: #191937;
+  }
+  font-size: 36px;
+  text-transform: lowercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+`;
 
 const CounterText = styled.span``; // add your styles here
 
-const MintContainer = styled.div``; // add your styles here
+const MintContainer = styled.div`
+  
+`; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+const PreMintInfo = styled.div`
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
-export interface HomeProps {
-  candyMachineId: anchor.web3.PublicKey;
-  config: anchor.web3.PublicKey;
-  connection: anchor.web3.Connection;
-  startDate: number;
-  treasury: anchor.web3.PublicKey;
-  txTimeout: number;
-}
+`;
 
-const Home = (props: HomeProps) => {
+const MintInfo = styled.div`
+  color: #D13030;
+  font-size: 24px;
+`;
+
+const MintButton = styled(Button)`
+  color: #D13030;
+  font-family: 'BitBap';
+  background: #0B0B1B;
+  :hover {
+    background: #191937;
+  }
+  font-size: 36px;
+  text-transform: lowercase;
+  margin-top: 10px;
+  padding: 0 40px 0 40px;
+`; // add your styles here
+
+
+const MintBtn = (props: MintProps) => {
   const [balance, setBalance] = useState<number>();
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
@@ -165,23 +202,34 @@ const Home = (props: HomeProps) => {
     props.connection,
   ]);
 
+  const mintData = props.siteData.homepageContent.mintSection;
+
   return (
-    <main>
+    <ContainerMain>
       {wallet && (
-        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
+        <MintInfo>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</MintInfo>
       )}
 
-      {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
+      {wallet && <MintInfo>Balance: {(balance || 0).toLocaleString()} SOL</MintInfo>}
 
-      {wallet && <p>Total Available: {itemsAvailable}</p>}
+      {wallet && <MintInfo>Total Available: {itemsAvailable}</MintInfo>}
 
-      {wallet && <p>Redeemed: {itemsRedeemed}</p>}
+      {wallet && <MintInfo>Redeemed: {itemsRedeemed}</MintInfo>}
 
-      {wallet && <p>Remaining: {itemsRemaining}</p>}
+      {wallet && <MintInfo>Remaining: {itemsRemaining}</MintInfo>}
+      {/* {<MintInfo>Wallet: d120...d12ac</MintInfo>}
 
-      <MintContainer>
+      {<MintInfo>Balance: 4,240 SOL</MintInfo>}
+
+      {<MintInfo>Total Available: 10</MintInfo>}
+
+      {<MintInfo>Redeemed: 1</MintInfo>}
+
+      {<MintInfo>Remaining: 9</MintInfo>} */}
+
+      {mintData.mintEnabled ? <MintContainer>
         {!wallet ? (
-          <ConnectButton>Connect Wallet</ConnectButton>
+            <ConnectButton>connect wallet</ConnectButton>
         ) : (
           <MintButton
             disabled={isSoldOut || isMinting || !isActive}
@@ -206,8 +254,11 @@ const Home = (props: HomeProps) => {
             )}
           </MintButton>
         )}
-      </MintContainer>
-
+      </MintContainer> : <h1>{mintData.mintMsg}</h1>}
+      {!wallet ? (<PreMintInfo>
+        <div>Supply: {mintData.supply}</div>
+        <div>Mint price: {mintData.mintPrice} SOL</div>
+      </PreMintInfo>) : null}
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
@@ -220,7 +271,7 @@ const Home = (props: HomeProps) => {
           {alertState.message}
         </Alert>
       </Snackbar>
-    </main>
+    </ContainerMain>
   );
 };
 
@@ -238,4 +289,4 @@ const renderCounter = ({ days, hours, minutes, seconds, completed }: any) => {
   );
 };
 
-export default Home;
+export default MintBtn;
