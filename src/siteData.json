@@ -1,0 +1,85 @@
+{
+    "homepageContent": {
+        "mintSection": {
+            "mintEnabled": false,
+            "supply": "200 / 7777",
+            "mintPrice": "0.08",
+            "mintMsg": "COMING SOON!"
+        },
+        "keypointsSection": {
+            "charity": {
+                "content": "As Vamps we need blood to live. So does everyone. We will donate 5% of mint earnings to the Global Blood Fund! ++ 🖤#love *"
+            },
+            "weeklyRewards": {
+                "content": "We will use 2% of secondary royalties for weekly rewards for Vamp holders."
+            },
+            "slatt": {
+                "content": "+* ok ! 🖤 build ! with us the ! best fanbase ++** community out ^ 🦋*  !+  there ! ++ 🖤#love *"
+            }
+        },
+        "rewardsSection": {
+            "content": "Every week we will be picking one trait. Every holder of a Vamp with that trait will get a lottery ticket. Then we will randomly pick 3 Vamps to win the prize! The prize is 2% of secondary sales from last week."
+        },
+        "roadmapSection": {
+            "roadmapItems": [
+                {
+                    "header": "Q4 2021",
+                    "content": [
+                        "Dapp launch and community building",
+                        "Social Media marketing",
+                        "Minting SolaVamps",
+                        "Listing on Magic Eden right after mint"
+                    ]
+                },
+                {
+                    "header": "Q4 2021",
+                    "content": [
+                        "Donating 5% of earnings from mint to Global Blood Fund",
+                        "Giveaway of 1/1 Whole Lotta Red inspired album cover to a random holder"
+                    ]
+                },
+                {
+                    "header": "Forever",
+                    "content": [
+                        "Using all royalties from secondary markets (5%) every week to sweep the floor"
+                    ]
+                },
+                {
+                    "header": "Q1 2022",
+                    "content": [
+                        "Release of SolaVamps merch",
+                        "Creating an online space, where all Vamps can chill, chat and listen to some tunes"
+                    ]
+                },
+                {
+                    "header": "2022",
+                    "content": [
+                        "Collaborations with other NFT projects",
+                        "Continuation of Social Media marketing to keep on growing"
+                    ]
+                }
+            ]
+        },
+        "faqSection": {
+            "faqEnabled": true,
+            "faqItems": [
+                {
+                    "question": "How to get rewards?",
+                    "answer": "Every week we will be picking one trait. Every holder of a Vamp with that trait will get a lottery ticket. Then we will randomly pick 3 Vamps to win the prize! The prize is 2% of secondary sales from last week. "
+                },
+                {
+                    "question": "What is solavamps?",
+                    "answer": "SolaVamps is a Solana NFT project created by Playboi Carti fans for Playboi Carti fans. We are inspired by him and we want to build the best fanbase out there! "
+                },
+                {
+                    "question": "What is the price of SolaVamp?",
+                    "answer": "Price in presale is 0.08 SOL. Mint price is 0.1 SOL"
+                },
+                {
+                    "question": "When does the presale and mint start?",
+                    "answer": "Presale will start at the beginning of December. Mint will start a week after the presale. In presale we will be selling 200 unique Vamps with purple coats, which will not be available later."
+                }
+            ]
+        }
+    }
+}
