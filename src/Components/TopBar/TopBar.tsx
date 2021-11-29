@@ -92,6 +92,14 @@ const TopBar = (props: TopBarProps) => {
         props.faqRef!.current?.scrollIntoView({ behavior: 'smooth' })
     }
 
+    function handleTwitterLink() {
+        window.location.href = 'https://twitter.com/SolaVamps'; 
+    }
+
+    function handleDiscordLink() {
+        window.location.href = 'https://discord.gg/jMh73ju23p'; 
+    }
+
     return (
         <TopBarContainer>
             <Logo to={"/"}>SolaVamps</Logo>
@@ -102,8 +110,8 @@ const TopBar = (props: TopBarProps) => {
                 {props.isFaqEnabled && <NavigationItem to={"/"} onClick={handleScrollToFaq}>faq</NavigationItem>}
             </Navigation>}
             <Socials>
-                <SocialIcon src={twitterLogo}/>
-                <SocialIcon src={discordLogo}/>
+                <SocialIcon src={twitterLogo} onClick={handleTwitterLink}/>
+                <SocialIcon src={discordLogo} onClick={handleDiscordLink}/>
             </Socials>
         </TopBarContainer>
     )
