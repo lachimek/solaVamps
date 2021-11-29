@@ -256,8 +256,14 @@ const MintBtn = (props: MintProps) => {
         )}
       </MintContainer> : <h1>{mintData.mintMsg}</h1>}
       {!wallet ? (<PreMintInfo>
-        <div>Supply: {mintData.supply}</div>
-        <div>Mint price: {mintData.mintPrice} SOL</div>
+        <div>
+          <div>Supply: {mintData.supply}</div>
+          <div>200 in presale</div>
+        </div>
+        <div>
+          <div>Mint price: {mintData.mintPrice} SOL</div>
+          <div>plus Solana fees</div>
+        </div>
       </PreMintInfo>) : null}
       <Snackbar
         open={alertState.open}

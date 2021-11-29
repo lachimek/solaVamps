@@ -1,21 +1,6 @@
 import styled from 'styled-components';
 import * as anchor from "@project-serum/anchor";
 
-import blade from './Vamps/Blade.png';
-import carti from './Vamps/Carti.png';
-import count from './Vamps/Count.png';
-import dracula from './Vamps/Dracula.png';
-import edward from './Vamps/Edward.png';
-import randomVamp0 from './Vamps/RandomVamps/0.png';
-import randomVamp1 from './Vamps/RandomVamps/1.png';
-import randomVamp2 from './Vamps/RandomVamps/2.png';
-import randomVamp3 from './Vamps/RandomVamps/3.png';
-import randomVamp4 from './Vamps/RandomVamps/4.png';
-import randomVamp5 from './Vamps/RandomVamps/5.png';
-import randomVamp6 from './Vamps/RandomVamps/6.png';
-import randomVamp7 from './Vamps/RandomVamps/7.png';
-import randomVamp8 from './Vamps/RandomVamps/8.png';
-import randomVamp9 from './Vamps/RandomVamps/9.png';
 import MintBtn from '../../Home';
 import SiteData from '../../SiteDataInterface';
 
@@ -107,10 +92,18 @@ export interface MintProps {
     siteData: SiteData;
 }
 
-function randomVamp() {
-    let items = [randomVamp0, randomVamp1, randomVamp2, randomVamp3, randomVamp4, randomVamp5, randomVamp6, randomVamp7, randomVamp8, randomVamp9];
-    return items[Math.floor(Math.random()*items.length)];
+function getRandomInt(min: number, max: number): number {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
+
+const img0 = require(`./Vamps/${getRandomInt(0, 99)}.png`).default;
+const img1 = require(`./Vamps/${getRandomInt(0, 99)}.png`).default;
+const img2 = require(`./Vamps/${getRandomInt(0, 99)}.png`).default;
+const img3 = require(`./Vamps/${getRandomInt(0, 99)}.png`).default;
+const img4 = require(`./Vamps/${getRandomInt(0, 99)}.png`).default;
+const img5 = require(`./Vamps/${getRandomInt(0, 99)}.png`).default;
 
 const MintSection = (props: MintProps) => {
     return (
@@ -129,12 +122,12 @@ const MintSection = (props: MintProps) => {
                 </MintButtonInnerContainer>
             </MintButtonContainer>
             <MintExamplesContainer>
-                <VampImage src={blade}/>
-                <VampImage src={carti}/>
-                <VampImage src={count}/>
-                <VampImage src={dracula}/>
-                <VampImage src={edward}/>
-                <VampImage src={randomVamp()}/>
+                <VampImage src={img0}/>
+                <VampImage src={img1}/>
+                <VampImage src={img2}/>
+                <VampImage src={img3}/>
+                <VampImage src={img4}/>
+                <VampImage src={img5}/>
             </MintExamplesContainer>
         </MintSectionContainer>
     )
