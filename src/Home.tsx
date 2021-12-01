@@ -49,7 +49,7 @@ const MintContainer = styled.div`
 `; // add your styles here
 
 const PreMintInfo = styled.div`
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -211,17 +211,13 @@ const MintBtn = (props: MintProps) => {
   return (
     <ContainerMain>
       {wallet && (
-        <MintInfo>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</MintInfo>
+        <MintInfo>WALLET: {shortenAddress(wallet.publicKey.toBase58() || "")}</MintInfo>
       )}
 
-      {wallet && <MintInfo>Balance: {(balance || 0).toLocaleString()} SOL</MintInfo>}
+      {wallet && <MintInfo>BALANCE: {(balance || 0).toLocaleString()} SOL</MintInfo>}
 
-      {wallet && <MintInfo>Total Available: {itemsAvailable}</MintInfo>}
-
-      {wallet && <MintInfo>Redeemed: {itemsRedeemed}</MintInfo>}
-
-      {wallet && <MintInfo>Remaining: {itemsRemaining}</MintInfo>}
-      {/* {<MintInfo>Wallet: d120...d12ac</MintInfo>}
+      {/*{wallet && <MintInfo>Total Available: {itemsAvailable}</MintInfo>}
+       {<MintInfo>Wallet: d120...d12ac</MintInfo>}
 
       {<MintInfo>Balance: 4,240 SOL</MintInfo>}
 
