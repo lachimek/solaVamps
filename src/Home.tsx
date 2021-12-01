@@ -40,7 +40,9 @@ const ConnectButton = styled(WalletDialogButton)`
   margin-bottom: 10px;
 `;
 
-const CounterText = styled.span``; // add your styles here
+const CounterText = styled.span`
+  color: #D13030;
+`; // add your styles here
 
 const MintContainer = styled.div`
   
@@ -117,6 +119,8 @@ const MintBtn = (props: MintProps) => {
       setIsSoldOut(itemsRemaining === 0);
       setStartDate(goLiveDate);
       setCandyMachine(candyMachine);
+
+      console.log(goLiveDate);
     })();
   };
 
@@ -227,7 +231,7 @@ const MintBtn = (props: MintProps) => {
 
       {<MintInfo>Remaining: 9</MintInfo>} */}
 
-      {mintData.mintEnabled ? <MintContainer>
+      <MintContainer>
         {!wallet ? (
             <ConnectButton>connect wallet</ConnectButton>
         ) : (
@@ -247,14 +251,14 @@ const MintBtn = (props: MintProps) => {
             ) : (
               <Countdown
                 date={startDate}
-                onMount={({ completed }) => completed && setIsActive(true)}
+                onMount={({ completed }) => completed && setIsActive(false)}
                 onComplete={() => setIsActive(true)}
                 renderer={renderCounter}
               />
             )}
           </MintButton>
         )}
-      </MintContainer> : <h1>{mintData.mintMsg}</h1>}
+      </MintContainer>
       {!wallet ? (<PreMintInfo>
         <div>
           <div>Supply: {mintData.supply}</div>
@@ -288,9 +292,12 @@ interface AlertState {
 }
 
 const renderCounter = ({ days, hours, minutes, seconds, completed }: any) => {
+  let formattedHours = (hours + (days || 0) * 24) < 10 ? "0"+hours + (days || 0) * 24 : hours + (days || 0) * 24;
+  let formattedMinutes = minutes < 10 ? "0"+minutes : minutes;
+  let formattedSeconds = seconds < 10 ? "0"+seconds : seconds;
   return (
     <CounterText>
-      {hours + (days || 0) * 24} hours, {minutes} minutes, {seconds} seconds
+      {formattedHours}:{formattedMinutes}:{formattedSeconds}
     </CounterText>
   );
 };

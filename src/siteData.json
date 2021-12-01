@@ -1,7 +1,7 @@
 {
     "homepageContent": {
         "mintSection": {
-            "mintEnabled": false,
+            "mintEnabled": true,
             "supply": "200 / 7777",
             "mintPrice": "0.08",
             "mintMsg": "COMING SOON!"

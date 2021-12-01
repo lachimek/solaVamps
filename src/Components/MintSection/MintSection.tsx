@@ -40,7 +40,8 @@ const MintButtonInnerContainer = styled.div`
 
 const MintHeader = styled.div`
     font-size: 36px;
-
+    text-align: center;
+    
     @media (min-width: 1200px){
         font-size: 48px;
     }
