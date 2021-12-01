@@ -259,7 +259,7 @@ const MintBtn = (props: MintProps) => {
           </MintButton>
         )}
       </MintContainer>
-      {!wallet ? (<PreMintInfo>
+      <PreMintInfo>
         <div>
           <div>Supply: {mintData.supply}</div>
           <div>200 in presale</div>
@@ -268,7 +268,7 @@ const MintBtn = (props: MintProps) => {
           <div>Mint price: {mintData.mintPrice} SOL</div>
           <div>plus Solana fees</div>
         </div>
-      </PreMintInfo>) : null}
+      </PreMintInfo>
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
