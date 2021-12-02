@@ -81,9 +81,9 @@ const MintBtn = (props: MintProps) => {
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
 
-  const [itemsAvailable, setItemsAvailable] = useState(0);
-  const [itemsRedeemed, setItemsRedeemed] = useState(0);
-  const [itemsRemaining, setItemsRemaining] = useState(0);
+  // const [itemsAvailable, setItemsAvailable] = useState(0);
+  // const [itemsRedeemed, setItemsRedeemed] = useState(0);
+  // const [itemsRemaining, setItemsRemaining] = useState(0);
 
   const [alertState, setAlertState] = useState<AlertState>({
     open: false,
@@ -103,18 +103,16 @@ const MintBtn = (props: MintProps) => {
       const {
         candyMachine,
         goLiveDate,
-        itemsAvailable,
         itemsRemaining,
-        itemsRedeemed,
       } = await getCandyMachineState(
         wallet as anchor.Wallet,
         props.candyMachineId,
         props.connection
       );
 
-      setItemsAvailable(itemsAvailable);
-      setItemsRemaining(itemsRemaining);
-      setItemsRedeemed(itemsRedeemed);
+      // setItemsAvailable(itemsAvailable);
+      // setItemsRemaining(itemsRemaining);
+      // setItemsRedeemed(itemsRedeemed);
 
       setIsSoldOut(itemsRemaining === 0);
       setStartDate(goLiveDate);
