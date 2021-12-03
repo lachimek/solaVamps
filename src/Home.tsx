@@ -286,7 +286,7 @@ interface AlertState {
 }
 
 const renderCounter = ({ days, hours, minutes, seconds, completed }: any) => {
-  let formattedHours = (hours + (days || 0) * 24) < 10 ? "0"+hours + (days || 0) * 24 : hours + (days || 0) * 24;
+  let formattedHours = hours < 10 ? "0"+hours : hours;
   let formattedMinutes = minutes < 10 ? "0"+minutes : minutes;
   let formattedSeconds = seconds < 10 ? "0"+seconds : seconds;
   return (
