@@ -1,0 +1,58 @@
+{
+  "name": "OG SolaVamps #154",
+  "symbol": "SVA",
+  "description": "SolaVamps are 7,777 Vamps living on Solana. Our project is inspired by Whole Lotta Red by Playboi Carti. We want to gather all Vamps out there and grow as the best fanbase! ",
+  "seller_fee_basis_points": 500,
+  "image": "image.png",
+  "external_url": "https://www.solavamps.com",
+  "edition": 154,
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Grey"
+    },
+    {
+      "trait_type": "Coat",
+      "value": "Purple"
+    },
+    {
+      "trait_type": "Sweater",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Face",
+      "value": "White"
+    },
+    {
+      "trait_type": "Mouth",
+      "value": "No Teeth"
+    },
+    {
+      "trait_type": "Hair",
+      "value": "Hedgehog"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Accesories",
+      "value": "None"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "image.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "Ei7yWm6LozFaXz4k9mzhxXeXLrFdw2uxnonvyK6BoVSW",
+        "share": 100
+      }
+    ]
+  }
+}
